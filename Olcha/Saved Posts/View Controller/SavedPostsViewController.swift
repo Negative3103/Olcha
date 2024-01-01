@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class SavedPostsViewController: UIViewController {
+final class SavedPostsViewController: UIViewController {
 
     //MARK: - Outlets
     private let tableView = UITableView()

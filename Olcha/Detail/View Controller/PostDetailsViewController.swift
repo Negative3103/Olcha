@@ -7,12 +7,14 @@
 
 import UIKit
 
-class PostDetailsViewController: UIViewController {
+final class PostDetailsViewController: UIViewController {
     
     //MARK: - Outlets
-    private let post: Post
     private let titleLabel = UILabel()
     private let bodyLabel = UILabel()
+    
+    //MARK: - Attributes
+    private let post: Post
     
     //MARK: - Lifecycles
     init(post: Post) {
@@ -26,11 +28,16 @@ class PostDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        appearanceSettings()
     }
-    
-    //MARK: - Setup UI
-    private func setupUI() {
+
+}
+
+//MARK: = Other funcs
+extension PostDetailsViewController {
+    private func appearanceSettings() {
+        title = "Post Detail"
+        
         titleLabel.text = post.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.numberOfLines = 0
