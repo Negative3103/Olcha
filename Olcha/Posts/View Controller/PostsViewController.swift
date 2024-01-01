@@ -74,7 +74,7 @@ extension PostsViewController {
         refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         tableView.refreshControl = refreshControl
         
-        tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        tabBarItem = UITabBarItem(title: "Posts", image: UIImage(named: "documentText"), tag: 0)
     }
     
     @objc private func refreshPosts() {
@@ -98,6 +98,7 @@ extension PostsViewController {
         
         do {
             try managedContext.save()
+            Notification.Name.savedUpdate.post()
             print("SUCCESFULLY!")
         } catch {
             print("Error saving posts to CoreData: \(error)")

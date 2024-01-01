@@ -46,7 +46,7 @@ final class SavedDataProvider: NSObject, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = viewController as? SavedPostsViewController else { return }
         let savedPost = savedPosts[indexPath.row]
-//        viewController.showPostDetails(savedPost)
+        viewController.showPostDetails(Post(id: savedPost.id , title: savedPost.title ?? "", body: savedPost.body ?? "", userId: savedPost.userId ))
     }
 }
 

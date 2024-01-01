@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D141B8222B42C42600DE574D /* SavedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141B8212B42C42600DE574D /* SavedDataProvider.swift */; };
+		D141B8252B42D12D00DE574D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141B8242B42D12D00DE574D /* NotificationName.swift */; };
 		D1E1B0F92B42A9F4006B944A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1B0F82B42A9F4006B944A /* AppDelegate.swift */; };
 		D1E1B1032B42A9F4006B944A /* Olcha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1E1B1012B42A9F4006B944A /* Olcha.xcdatamodeld */; };
 		D1E1B1052B42A9F5006B944A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E1B1042B42A9F5006B944A /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		D141B8212B42C42600DE574D /* SavedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataProvider.swift; sourceTree = "<group>"; };
+		D141B8242B42D12D00DE574D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		D1E1B0F52B42A9F4006B944A /* Olcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E1B0F82B42A9F4006B944A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E1B1022B42A9F4006B944A /* Olcha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Olcha.xcdatamodel; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 			path = "Data Provider";
 			sourceTree = "<group>";
 		};
+		D141B8232B42D12000DE574D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D141B8242B42D12D00DE574D /* NotificationName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D1E1B0EC2B42A9F4006B944A = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 		D1E1B0F72B42A9F4006B944A /* Olcha */ = {
 			isa = PBXGroup;
 			children = (
+				D141B8232B42D12000DE574D /* Extensions */,
 				D1E1B1282B42BE8F006B944A /* Models */,
 				D1E1B1182B42AD57006B944A /* Posts */,
 				D1E1B11C2B42ADC4006B944A /* Detail */,
@@ -228,6 +239,7 @@
 				D1E1B12D2B42BF88006B944A /* PostsDataProvider.swift in Sources */,
 				D1E1B12A2B42BE95006B944A /* Post.swift in Sources */,
 				D1E1B0F92B42A9F4006B944A /* AppDelegate.swift in Sources */,
+				D141B8252B42D12D00DE574D /* NotificationName.swift in Sources */,
 				D1E1B1232B42AE30006B944A /* SavedPostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

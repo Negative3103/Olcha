@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let postsVC = UINavigationController(rootViewController: PostsViewController())
-        let savedPostsVC = UINavigationController(rootViewController: SavedPostsViewController())
+        let savedPostsVC = SavedPostsViewController()
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [postsVC, savedPostsVC]

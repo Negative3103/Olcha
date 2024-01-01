@@ -38,7 +38,12 @@ extension SavedPostsViewController {
         dataProvider.viewController = self
         dataProvider.tableView = tableView
         
-        tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        tabBarItem = UITabBarItem(title: "Saved", image: UIImage(named: "download"), tag: 1)
+        
+        Notification.Name.savedUpdate.onPost { [weak self] _ in
+            guard let `self` = self else { return }
+            fetchSavedPosts()
+        }
     }
     
     private func fetchSavedPosts() {
