@@ -57,6 +57,7 @@ extension PostsViewController {
 //MARK: - Other funcs
 extension PostsViewController {
     private func appearanceSettings() {
+        title = "Posts"
         tableView.frame = view.bounds
         view.addSubview(tableView)
         

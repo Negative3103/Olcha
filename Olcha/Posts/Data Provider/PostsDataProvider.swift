@@ -61,7 +61,7 @@ final class PostsDataProvider: NSObject, UITableViewDelegate, UITableViewDataSou
 extension PostsDataProvider {
     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         let configuration = UIContextMenuConfiguration(identifier: indexPath as NSCopying, previewProvider: nil) { action in
-            let saveAction = UIAction(title: "Save", attributes: .keepsMenuPresented) { [weak self] _ in
+            let saveAction = UIAction(title: "Save") { [weak self] _ in
                 guard let viewController = self?.viewController as? PostsViewController, let item = self?.posts[indexPath.row] else { return }
                 viewController.savePosts(item)
             }

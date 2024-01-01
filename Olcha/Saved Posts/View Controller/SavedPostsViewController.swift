@@ -32,6 +32,7 @@ final class SavedPostsViewController: UIViewController {
 //MARK: - Other funcs
 extension SavedPostsViewController {
     private func appearanceSettings() {
+        title = "Saved"
         tableView.frame = view.bounds
         view.addSubview(tableView)
         
