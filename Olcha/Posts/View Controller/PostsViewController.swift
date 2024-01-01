@@ -41,7 +41,6 @@ extension PostsViewController {
             do {
                 let decoder = JSONDecoder()
                 let posts = try decoder.decode([Post].self, from: data)
-                self.savePosts(posts)
                 
                 DispatchQueue.main.async { [weak self] in
                     guard let `self` = self else { return }
@@ -86,18 +85,16 @@ extension PostsViewController {
 
 //MARK: - Core Data
 extension PostsViewController {
-    private func savePosts(_ posts: [Post]) {
+    internal func savePosts(_ post: Post) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        for post in posts {
-            let posts = NSEntityDescription.insertNewObject(forEntityName: "Posts", into: managedContext) as! Posts
-            posts.id = post.id
-            posts.title = post.title
-            posts.body = post.body
-            posts.userId = post.userId
-        }
+        let posts = NSEntityDescription.insertNewObject(forEntityName: "Posts", into: managedContext) as! Posts
+        posts.id = post.id
+        posts.title = post.title
+        posts.body = post.body
+        posts.userId = post.userId
         
         do {
             try managedContext.save()

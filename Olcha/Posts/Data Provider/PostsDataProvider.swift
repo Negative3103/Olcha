@@ -56,3 +56,33 @@ final class PostsDataProvider: NSObject, UITableViewDelegate, UITableViewDataSou
         viewController.showPostDetails(post)
     }
 }
+
+// MARK: - Context Menu
+extension PostsDataProvider {
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let configuration = UIContextMenuConfiguration(identifier: indexPath as NSCopying, previewProvider: nil) { action in
+            let saveAction = UIAction(title: "Save", attributes: .keepsMenuPresented) { [weak self] _ in
+                guard let viewController = self?.viewController as? PostsViewController, let item = self?.posts[indexPath.row] else { return }
+                viewController.savePosts(item)
+            }
+            return UIMenu(title: "", children: [saveAction])
+        }
+        return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, previewForHighlightingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        makeTargetedPreview(for: configuration)
+    }
+    
+    func tableView(_ tableView: UITableView, previewForDismissingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        makeTargetedPreview(for: configuration)
+    }
+    
+    private func makeTargetedPreview(for configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        guard let indexPath = configuration.identifier as? IndexPath else { return nil }
+        guard let cell = tableView.cellForRow(at: indexPath) else { return nil }
+        let parameters = UIPreviewParameters()
+        parameters.backgroundColor = .clear
+        return UITargetedPreview(view: cell, parameters: parameters)
+    }
+}
